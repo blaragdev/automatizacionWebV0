@@ -2,10 +2,7 @@ package pages;
 
 //CLASE PARA METODOS Y XPATH ASOCIADOS A LA PAGINA
 public class LoginPage extends BasePage {
-    //MARK: - XPATH de la pagina
-    
-    //private String sectionLink = "//a[normalize-space()='%s' and @href]";
-    //private String sectionLink = "//h5[normalize-space()='%s']";
+    //XPATH de la pagina
 
     private String menuLateralSuperior = "//img[@alt='Logo Padok']";
     private String signInWithEmail = "//p[normalize-space()='Sign in with Email']";
@@ -13,7 +10,7 @@ public class LoginPage extends BasePage {
     private String inputPass = "//input[@name='password']";
     private String botonIniciarSesion = "//button[normalize-space()='Iniciar sesión']";
 
-    public String mensajeDashboard = "//p[contains(text(),'Este es tu Dashboard de tu cuenta Padok como admin')]";
+    public String mensajeDashboard = "//p[contains(text(),'Este es tu Dashboard de tu cuenta Padok como administrador')]";
     public String mensajeMontoLiquidar = "//p[normalize-space()='Monto a liquidar']";
     public String mensajeTotalRecaudado = "//p[normalize-space()='Total recaudado']";
     public String mensajeDescuentos = "//p[normalize-space()='Descuentos']";
@@ -47,11 +44,19 @@ public class LoginPage extends BasePage {
         clickElement(botonIniciarSesion);
     }
 
-//    public void clickEnSeccionDeBarraNavegacion(String seccion) {
-//        // Reemplaza el marcador de posición en sectionLink con el nombre
-//        String xpathSection = String.format(sectionLink, seccion);
-//        clickElement(xpathSection);
-//    }
+    public Boolean mensajeDashboardSeaVisible() {
+        return esperoElemento(mensajeDashboard);
+    }
 
-    
+    public Boolean montoLiquidarSeaVisible() {
+        return esperoElemento(mensajeMontoLiquidar);
+    }
+
+    public Boolean totalRecaudadoSeaVisible() {
+        return esperoElemento(mensajeTotalRecaudado);
+    }
+
+    public Boolean montoDescuentosSeaVisible() {
+        return esperoElemento(mensajeDescuentos);
+    }
 }

@@ -1,9 +1,7 @@
 package steps;
 
 import org.testng.asserts.SoftAssert;
-
 import io.cucumber.java.en.*;
-
 import pages.WidgetsPage;
 import pages.LoginPage;
 
@@ -14,7 +12,6 @@ public class Steps {
 
     LoginPage loginPage = new LoginPage();
     WidgetsPage widgetsPage = new WidgetsPage();
-
 
 
     @Given("navego a dev.padok.cl")
@@ -64,23 +61,26 @@ public class Steps {
 
     @Then("verifico que exista mensaje de Dashboard")
     public void verificoQueExistaMensajeDeDashboard() {
-        softAssert.assertEquals("Este es tu Dashboard de tu cuenta Padok como administrador", loginPage.mensajeDashboard);
+        softAssert.assertTrue(loginPage.mensajeDashboardSeaVisible());
+        softAssert.assertAll();
     }
 
     @Then("verifico que exista texto Monto a liquidar")
     public void verificoQueExistaTextoMontoALiquidar() {
-        softAssert.assertEquals("Monto a liquidar", loginPage.mensajeMontoLiquidar);
+        softAssert.assertTrue(loginPage.montoLiquidarSeaVisible());
+        softAssert.assertAll();
     }
 
     @Then("verifico que exista texto Total recaudado")
     public void verificoQueExistaTextoTotalRecaudado() {
-        softAssert.assertEquals("Total recaudado", loginPage.mensajeTotalRecaudado);
+        softAssert.assertTrue(loginPage.totalRecaudadoSeaVisible());
+        softAssert.assertAll();
     }
 
     @Then("verifico que exista texto Monto a Descuentos")
     public void verificoQueExistaTextoMontoADescuentos() {
-        softAssert.assertEquals("Descuentos", loginPage.mensajeDescuentos);
+        softAssert.assertTrue(loginPage.montoDescuentosSeaVisible());
+        softAssert.assertAll();
     }
-
 
 }

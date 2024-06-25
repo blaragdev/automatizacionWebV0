@@ -5,7 +5,7 @@ Feature: Feature login a padok
     # Background: Valida acceso a demoqa.com
     #     Given navego a dev.padok.cl
 
-
+  @LoginUser
   Scenario: Valida ingreso a dashboard
     Given navego a dev.padok.cl
     When hago click en menu lateral superior
@@ -16,3 +16,8 @@ Feature: Feature login a padok
     And verifico que exista texto Monto a liquidar
     And verifico que exista texto Total recaudado
     And verifico que exista texto Monto a Descuentos
+
+
+  @OtroTag
+  Scenario: Valida ingreso a dashboard
+    Given navego a dev.padok.cl
